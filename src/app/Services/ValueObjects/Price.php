@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services\ValueObjects;
 
 
@@ -52,5 +53,10 @@ class Price implements Stringable
     public function __toString(): string
     {
         return number_format($this->value(), 2, ',', ' ') . ' ' . $this->symbol();
+    }
+
+    public function sum($count): Price
+    {
+        return Price::make($this->value * $count);
     }
 }
