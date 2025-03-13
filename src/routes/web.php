@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -28,3 +29,10 @@ Route::get('/product/change/update/{product:slug}', [ProductController::class, '
 Route::delete('/product/{product:slug}', [ProductController::class, 'delete'])->name('product.delete');
 Route::post('/product', [ProductController::class, 'create'])->name('product.create');
 Route::put('/product/{product:slug}', [ProductController::class, 'update'])->name('product.update');
+
+Route::get('/order/change/new/{product:slug}', [OrderController::class, 'changeNew'])->name('order.change.new');
+Route::get('/order/change/update/{order:id}', [OrderController::class, 'changeUpdate'])->name('order.change.update');
+
+Route::post('/order/{product:slug}', [OrderController::class, 'create'])->name('order.create');
+Route::get('/orders', OrderController::class)->name('orders');
+Route::put('/order/{order:id}', [OrderController::class, 'update'])->name('order.update');
