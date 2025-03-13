@@ -33,6 +33,7 @@
             @if ($product !== null)
             @method('PUT')
             @endif
+            <a class="btn btn-outline-secondary mt-3" href="{{route('catalog')}}"> Отмена </a>
         </form>
     </div>
  @endsection
