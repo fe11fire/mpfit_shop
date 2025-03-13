@@ -40,18 +40,11 @@ class ProductFormRequest extends FormRequest
 
     public function messages()
     {
-        // dd(22);
         return [
             'title.*' => 'Отсутствует название товара',
             'description' => 'Отсутствует описание товара',
             'price' => 'Отсутствует цена товара',
             'category_id' => 'Категория не выбрана'
-        ];
-        return [
-            'title.*' => 'товара',
-            'description' => 'товара',
-            'price' => 'товара',
-            'category_id' => 'выбрана'
         ];
     }
 }
