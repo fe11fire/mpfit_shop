@@ -33,6 +33,10 @@ class ViewServiceProvider extends ServiceProvider
                         'link' => route('catalog')
                     ],
                     [
+                        'title' => 'Заказы',
+                        'link' => route('orders')
+                    ],
+                    [
                         'title' => 'Создать товар',
                         'link' => route('product.change.new')
                     ],
