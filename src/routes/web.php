@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 
+
+Route::get('/', CatalogController::class)->name('catalog');
+Route::get('/catalog', CatalogController::class)->name('catalog');
+
+Route::get('/product/{product:slug}', ProductController::class)->name('product');
