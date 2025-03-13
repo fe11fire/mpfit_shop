@@ -41,10 +41,15 @@ services:
       - PMA_PORT=3306
 
   artisan:
-    container_name: mpfit-shop-artisan
     build: 
       dockerfile: docker/php/Dockerfile
     volumes:
       - './src:/var/www/html'
     entrypoint: ["php", "/var/www/html/artisan"]
+
+  composer:
+    build: 
+      dockerfile: docker/composer/Dockerfile
+    volumes:
+      - './src:/var/www/html'
   
