@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services\Casts;
 
 
@@ -33,7 +34,7 @@ class PriceCast implements CastsAttributes
     public function set($model, string $key, $value, array $attributes): int
     {
         if (!$value instanceof Price) {
-            $value = Price::make($value);
+            $value = Price::make(intval(floatval($value) * 100));
         }
         return $value->raw();
     }

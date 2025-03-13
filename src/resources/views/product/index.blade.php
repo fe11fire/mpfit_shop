@@ -12,6 +12,10 @@
 	</div>
 	<div class="row mt-3">
 		<h6 class="card-subtitle mb-2 text-info fw-bold">{{ $product->price }}</h6>
-	</div>
-
+	</div>	
+	<form action="{{ route('product.delete', $product->slug) }}" method="POST">
+		<button class="btn btn-outline-secondary" type="submit">УДАЛИТЬ</button>
+		@method('DELETE')
+		@csrf
+	</form>
  @endsection

@@ -6,10 +6,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             @foreach ($menu as $item)
-            <li class="nav-item">
-            <a href="{{ $item['link'] }}" class="nav-link">{{ $item['title'] }}</a>
-            </li>
-        @endforeach
+              <li class="nav-item">
+              <a href="{{ $item['link'] }}" class="nav-link">{{ $item['title'] }}</a>
+              </li>
+            @endforeach
         </ul>
       </div>
     </div>
