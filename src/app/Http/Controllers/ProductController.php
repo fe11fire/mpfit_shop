@@ -21,6 +21,19 @@ class ProductController extends Controller
         return view(
             'product.change',
             [
+                'product' => null,
+                'categories' => Category::all(),
+            ]
+        );
+    }
+
+    public function changeUpdate(Product $product)
+    {
+        // dd($product->priceUpdate());
+        return view(
+            'product.change',
+            [
+                'product' => $product,
                 'categories' => Category::all(),
             ]
         );
@@ -32,6 +45,16 @@ class ProductController extends Controller
         // dd($validated);
         $product = Product::create($validated);
         return redirect()->route('catalog');
+    }
+
+    public function update(Product $product, ProductFormRequest $request)
+    {
+        $validated = $request->validated();
+        // dd($validated);
+        $product = Product::find($product->id);
+        $product->update($validated);
+        $product->save();
+        return redirect()->route('product', $product->slug);
     }
 
     public function delete(Product $product)

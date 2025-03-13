@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProductFormRequest extends FormRequest
@@ -41,11 +40,18 @@ class ProductFormRequest extends FormRequest
 
     public function messages()
     {
+        // dd(22);
         return [
             'title.*' => 'Отсутствует название товара',
-            'description.*' => 'Отсутствует описание товара',
+            'description' => 'Отсутствует описание товара',
             'price' => 'Отсутствует цена товара',
             'category_id' => 'Категория не выбрана'
+        ];
+        return [
+            'title.*' => 'товара',
+            'description' => 'товара',
+            'price' => 'товара',
+            'category_id' => 'выбрана'
         ];
     }
 }

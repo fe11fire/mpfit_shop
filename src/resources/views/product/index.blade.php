@@ -14,8 +14,11 @@
 		<h6 class="card-subtitle mb-2 text-info fw-bold">{{ $product->price }}</h6>
 	</div>	
 	<form action="{{ route('product.delete', $product->slug) }}" method="POST">
-		<button class="btn btn-outline-secondary" type="submit">УДАЛИТЬ</button>
+		<button class="btn btn-outline-secondary mt-3" type="submit">УДАЛИТЬ</button>
 		@method('DELETE')
 		@csrf
+	</form>
+	<form action="{{ route('product.change.update', $product->slug) }}" method="GET">
+		<button class="btn btn-outline-secondary mt-3" type="submit">ИЗМЕНИТЬ</button>
 	</form>
  @endsection
